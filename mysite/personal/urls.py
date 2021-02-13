@@ -4,6 +4,6 @@ from . import views
 app_name = 'main'  # here for namespacing of urls.
 
 urlpatterns = [
-    path("", views.homepage, name="homepage"),
+    path("", views.login_request, name="login"),
     path("register",views.register,name="register"),
 ]

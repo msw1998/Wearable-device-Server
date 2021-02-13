@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+	{% load static %}
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Admin Dashboard</title>
     <!-- plugins:css -->
-    <link rel="stylesheet" href="../../assets/vendors/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="../../assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="{% static 'personal/vendors/mdi/css/materialdesignicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'personal/vendors/css/vendor.bundle.base.css' %}">
     <!-- endinject -->
     <!-- Plugin css for this page -->
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <!-- endinject -->
     <!-- Layout styles -->
-    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="{% static 'personal/css/style.css' %}">
     <!-- End layout styles -->
-    <link rel="shortcut icon" href="../../assets/images/favicon.png" />
+    <link rel="shortcut icon" href="{% static 'personal/images/favicon.png" />
   </head>
   <body>
     <div class="container-scroller">
@@ -26,19 +27,25 @@
             <div class="card col-lg-4 mx-auto">
               <div class="card-body px-5 py-5"> 
                 <h3 class="card-title text-left mb-3">Register</h3>
-                <form>
+                <form method = "POST">
+					{% csrf_token %}
                   <div class="form-group">
                     <label>Username</label>
-                    <input type="text" class="form-control p_input">
+                    <input type="text" name="username" class="form-control p_input">
                   </div>
                   <div class="form-group">
                     <label>Email</label>
-                    <input type="email" class="form-control p_input">
+                    <input type="email" name="email" class="form-control p_input">
                   </div>
                   <div class="form-group">
                     <label>Password</label>
-                    <input type="password" class="form-control p_input">
+                    <input type="password" name="password1"class="form-control p_input">
                   </div>
+				  <div class="form-group">
+                    <label>Confirm Password</label>
+                    <input type="password" name="password2"class="form-control p_input">
+                  </div>
+					
                   <div class="form-group d-flex align-items-center justify-content-between">
                     <div class="form-check">
                       <label class="form-check-label">
@@ -47,7 +54,7 @@
                     <a href="#" class="forgot-pass">Forgot password</a>
                   </div>
                   <div class="text-center">
-                    <button type="submit" class="btn btn-primary btn-block enter-btn">Login</button>
+                    <button type="submit" class="btn btn-primary btn-block enter-btn">Sign Up</button>
                   </div>
                   <div class="d-flex">
                     <button class="btn btn-facebook col mr-2">
@@ -55,7 +62,7 @@
                     <button class="btn btn-google col">
                       <i class="mdi mdi-google-plus"></i> Google plus </button>
                   </div>
-                  <p class="sign-up text-center">Already have an Account?<a href="#"> Sign Up</a></p>
+                  <p class="sign-up text-center">Already have an Account?<a href="/"> Sign In</a></p>
                   <p class="terms">By creating an account you are accepting our<a href="#"> Terms & Conditions</a></p>
                 </form>
               </div>
@@ -69,16 +76,16 @@
     </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
-    <script src="../../assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="{% static 'personal/vendors/js/vendor.bundle.base.js' %}"></script>
     <!-- endinject -->
     <!-- Plugin js for this page -->
     <!-- End plugin js for this page -->
     <!-- inject:js -->
-    <script src="../../assets/js/off-canvas.js"></script>
-    <script src="../../assets/js/hoverable-collapse.js"></script>
-    <script src="../../assets/js/misc.js"></script>
-    <script src="../../assets/js/settings.js"></script>
-    <script src="../../assets/js/todolist.js"></script>
+    <script src="{% static 'personal/js/off-canvas.js' %}"></script>
+    <script src="{% static 'personal/js/hoverable-collapse.js' %}"></script>
+    <script src="{% static 'personal/js/misc.js' %}"></script>
+    <script src="{% static 'personal/js/settings.js' %}"></script>
+    <script src="{% static 'personal/js/todolist.js' %}"></script>
     <!-- endinject -->
   </body>
 </html>
